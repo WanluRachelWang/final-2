@@ -13,7 +13,6 @@ Tag
   tag_name: string
 
 
-
 Post
   user_id: integer
   post_time: datetime

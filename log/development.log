@@ -2179,3 +2179,978 @@ Processing by UsersController#index as HTML
   [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
   Rendered users/index.html.erb within layouts/application (1.8ms)
 Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar, "password" varchar, "salt" varchar, "profile_pic_path" varchar, "gender" boolean DEFAULT 'f', "id_created_time" datetime, "nick_name" varchar, "place" varchar, "last_login_time" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (5, 'test_user_2', 'test2', 'salt2', 'path2', 't', '2015-05-04 02:18:31.000000', 'name2', 'name2', '2015-05-04 02:18:31.000000')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (6, 'test_user_3', 'test3', 'salt3', 'path3', 't', '2015-05-04 02:18:31.000000', 'name3', 'name3', '2015-05-04 02:18:31.000000')[0m
+  [1m[35m (1.1ms)[0m  DROP TABLE "users"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar, "password" varchar, "salt" varchar, "profile_pic_path" varchar, "gender" boolean DEFAULT 'f', "id_created_time" datetime, "nick_name" varchar, "place" varchar, "last_login_time" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "ausers"
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "users" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (5, 'test_user_2', 'test2', 'salt2', 'path2', 't', '2015-05-04 02:18:31.000000', 'name2', 'name2', '2015-05-04 02:18:31.000000')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "users" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (6, 'test_user_3', 'test3', 'salt3', 'path3', 't', '2015-05-04 02:18:31.000000', 'name3', 'name3', '2015-05-04 02:18:31.000000')
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_follower_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_follower_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friends_on_friend_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friends_on_friend_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friends_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friends_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_marks_on_tag_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_marks_on_tag_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_marks_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_marks_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_restaurant_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_restaurant_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_replies_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_replies_on_post_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_replies_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_replies_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_follower_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_follower_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friends_on_friend_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friends_on_friend_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friends_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friends_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_marks_on_tag_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_marks_on_tag_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_marks_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_marks_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_restaurant_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_restaurant_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_replies_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_replies_on_post_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_replies_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_replies_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "tags"[0m
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "posts"
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "pictures"[0m
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "marks"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "likes"[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "replies"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "friends"[0m
+  [1m[35mSQL (1.1ms)[0m  DELETE FROM "follows"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("user_name", "password", "salt", "profile_pic_path", "gender", "id_created_time", "nick_name", "place", "last_login_time") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["user_name", "test_user_1"], ["password", "test1"], ["salt", "salt1"], ["profile_pic_path", "path1"], ["gender", "t"], ["id_created_time", "2015-05-04 02:18:31.000000"], ["nick_name", "name1"], ["place", "name1"], ["last_login_time", "2015-05-04 02:18:31.000000"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("user_name", "password", "salt", "profile_pic_path", "gender", "id_created_time", "nick_name", "place", "last_login_time") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "test_user_2"], ["password", "test2"], ["salt", "salt2"], ["profile_pic_path", "path2"], ["gender", "t"], ["id_created_time", "2015-05-04 02:18:31.000000"], ["nick_name", "name2"], ["place", "name2"], ["last_login_time", "2015-05-04 02:18:31.000000"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("user_name", "password", "salt", "profile_pic_path", "gender", "id_created_time", "nick_name", "place", "last_login_time") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["user_name", "test_user_3"], ["password", "test3"], ["salt", "salt3"], ["profile_pic_path", "path3"], ["gender", "t"], ["id_created_time", "2015-05-04 02:18:31.000000"], ["nick_name", "name3"], ["place", "name3"], ["last_login_time", "2015-05-04 02:18:31.000000"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("tag_name") VALUES (?)[0m  [["tag_name", "tag1"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("tag_name") VALUES (?)  [["tag_name", "tag2"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("tag_name") VALUES (?)[0m  [["tag_name", "tag3"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("user_id", "post_time", "post_text", "longitude", "latitude", "restaurant_id", "restaurant_name", "rating") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["user_id", 1], ["post_time", "2015-05-04 02:18:31.000000"], ["post_text", "post_text1"], ["longitude", "login_longitude1"], ["latitude", "login_latitude1"], ["restaurant_id", 1], ["restaurant_name", "restaurant_name1"], ["rating", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("user_id", "post_time", "post_text", "longitude", "latitude", "restaurant_id", "restaurant_name", "rating") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["post_time", "2015-05-04 02:18:31.000000"], ["post_text", "post_text2"], ["longitude", "login_longitude2"], ["latitude", "login_latitude2"], ["restaurant_id", 2], ["restaurant_name", "restaurant_name2"], ["rating", 2]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("user_id", "post_time", "post_text", "longitude", "latitude", "restaurant_id", "restaurant_name", "rating") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["user_id", 2], ["post_time", "2015-05-04 02:18:31.000000"], ["post_text", "post_text3"], ["longitude", "login_longitude3"], ["latitude", "login_latitude3"], ["restaurant_id", 3], ["restaurant_name", "restaurant_name3"], ["rating", 3]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pictures" ("post_id", "img_path") VALUES (?, ?)[0m  [["post_id", 1], ["img_path", "img_path1"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pictures" ("post_id", "img_path") VALUES (?, ?)  [["post_id", 1], ["img_path", "img_path2"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pictures" ("post_id", "img_path") VALUES (?, ?)[0m  [["post_id", 1], ["img_path", "img_path3"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)  [["user_id", 1], ["tag_id", 1]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)[0m  [["user_id", 1], ["tag_id", 2]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)  [["user_id", 1], ["tag_id", 3]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)[0m  [["user_id", 2], ["tag_id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)  [["user_id", 2], ["tag_id", 2]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)[0m  [["user_id", 3], ["tag_id", 1]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (8.7ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "tags"[0m
+  [1m[35mSQL (1.1ms)[0m  DELETE FROM "posts"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "pictures"[0m
+  [1m[35mSQL (1.2ms)[0m  DELETE FROM "marks"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "likes"[0m
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "replies"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "friends"[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "follows"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("user_name", "password", "salt", "profile_pic_path", "gender", "id_created_time", "nick_name", "place", "last_login_time") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["user_name", "test_user_1"], ["password", "test1"], ["salt", "salt1"], ["profile_pic_path", "path1"], ["gender", "t"], ["id_created_time", "2015-05-04 02:18:31.000000"], ["nick_name", "name1"], ["place", "name1"], ["last_login_time", "2015-05-04 02:18:31.000000"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("user_name", "password", "salt", "profile_pic_path", "gender", "id_created_time", "nick_name", "place", "last_login_time") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "test_user_2"], ["password", "test2"], ["salt", "salt2"], ["profile_pic_path", "path2"], ["gender", "t"], ["id_created_time", "2015-05-04 02:18:31.000000"], ["nick_name", "name2"], ["place", "name2"], ["last_login_time", "2015-05-04 02:18:31.000000"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("user_name", "password", "salt", "profile_pic_path", "gender", "id_created_time", "nick_name", "place", "last_login_time") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["user_name", "test_user_3"], ["password", "test3"], ["salt", "salt3"], ["profile_pic_path", "path3"], ["gender", "t"], ["id_created_time", "2015-05-04 02:18:31.000000"], ["nick_name", "name3"], ["place", "name3"], ["last_login_time", "2015-05-04 02:18:31.000000"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("tag_name") VALUES (?)[0m  [["tag_name", "tag1"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("tag_name") VALUES (?)  [["tag_name", "tag2"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("tag_name") VALUES (?)[0m  [["tag_name", "tag3"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("user_id", "post_time", "post_text", "longitude", "latitude", "restaurant_id", "restaurant_name", "rating") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["user_id", 1], ["post_time", "2015-05-04 02:18:31.000000"], ["post_text", "post_text1"], ["longitude", "login_longitude1"], ["latitude", "login_latitude1"], ["restaurant_id", 1], ["restaurant_name", "restaurant_name1"], ["rating", 1]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("user_id", "post_time", "post_text", "longitude", "latitude", "restaurant_id", "restaurant_name", "rating") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["post_time", "2015-05-04 02:18:31.000000"], ["post_text", "post_text2"], ["longitude", "login_longitude2"], ["latitude", "login_latitude2"], ["restaurant_id", 2], ["restaurant_name", "restaurant_name2"], ["rating", 2]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("user_id", "post_time", "post_text", "longitude", "latitude", "restaurant_id", "restaurant_name", "rating") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["user_id", 2], ["post_time", "2015-05-04 02:18:31.000000"], ["post_text", "post_text3"], ["longitude", "login_longitude3"], ["latitude", "login_latitude3"], ["restaurant_id", 3], ["restaurant_name", "restaurant_name3"], ["rating", 3]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pictures" ("post_id", "img_path") VALUES (?, ?)[0m  [["post_id", 1], ["img_path", "img_path1"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pictures" ("post_id", "img_path") VALUES (?, ?)  [["post_id", 1], ["img_path", "img_path2"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pictures" ("post_id", "img_path") VALUES (?, ?)[0m  [["post_id", 1], ["img_path", "img_path3"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)  [["user_id", 1], ["tag_id", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)[0m  [["user_id", 1], ["tag_id", 2]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)  [["user_id", 1], ["tag_id", 3]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)[0m  [["user_id", 2], ["tag_id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)  [["user_id", 2], ["tag_id", 2]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)[0m  [["user_id", 3], ["tag_id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (8.8ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (1.1ms)[0m  [1mDELETE FROM "tags"[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "posts"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "pictures"[0m
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "marks"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "likes"[0m
+  [1m[35mSQL (1.1ms)[0m  DELETE FROM "replies"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "friends"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "follows"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("user_name", "password", "salt", "profile_pic_path", "gender", "id_created_time", "nick_name", "place", "last_login_time") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["user_name", "test_user_1"], ["password", "test1"], ["salt", "salt1"], ["profile_pic_path", "path1"], ["gender", "t"], ["id_created_time", "2015-05-04 02:18:31.000000"], ["nick_name", "name1"], ["place", "name1"], ["last_login_time", "2015-05-04 02:18:31.000000"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("user_name", "password", "salt", "profile_pic_path", "gender", "id_created_time", "nick_name", "place", "last_login_time") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "test_user_2"], ["password", "test2"], ["salt", "salt2"], ["profile_pic_path", "path2"], ["gender", "t"], ["id_created_time", "2015-05-04 02:18:31.000000"], ["nick_name", "name2"], ["place", "name2"], ["last_login_time", "2015-05-04 02:18:31.000000"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("user_name", "password", "salt", "profile_pic_path", "gender", "id_created_time", "nick_name", "place", "last_login_time") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["user_name", "test_user_3"], ["password", "test3"], ["salt", "salt3"], ["profile_pic_path", "path3"], ["gender", "t"], ["id_created_time", "2015-05-04 02:18:31.000000"], ["nick_name", "name3"], ["place", "name3"], ["last_login_time", "2015-05-04 02:18:31.000000"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("tag_name") VALUES (?)[0m  [["tag_name", "tag1"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("tag_name") VALUES (?)  [["tag_name", "tag2"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("tag_name") VALUES (?)[0m  [["tag_name", "tag3"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("user_id", "post_time", "post_text", "longitude", "latitude", "restaurant_id", "restaurant_name", "rating") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["user_id", 1], ["post_time", "2015-05-04 02:18:31.000000"], ["post_text", "post_text1"], ["longitude", "login_longitude1"], ["latitude", "login_latitude1"], ["restaurant_id", 1], ["restaurant_name", "restaurant_name1"], ["rating", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("user_id", "post_time", "post_text", "longitude", "latitude", "restaurant_id", "restaurant_name", "rating") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["post_time", "2015-05-04 02:18:31.000000"], ["post_text", "post_text2"], ["longitude", "login_longitude2"], ["latitude", "login_latitude2"], ["restaurant_id", 2], ["restaurant_name", "restaurant_name2"], ["rating", 2]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("user_id", "post_time", "post_text", "longitude", "latitude", "restaurant_id", "restaurant_name", "rating") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["user_id", 2], ["post_time", "2015-05-04 02:18:31.000000"], ["post_text", "post_text3"], ["longitude", "login_longitude3"], ["latitude", "login_latitude3"], ["restaurant_id", 3], ["restaurant_name", "restaurant_name3"], ["rating", 3]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pictures" ("post_id", "img_path") VALUES (?, ?)[0m  [["post_id", 1], ["img_path", "img_path1"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pictures" ("post_id", "img_path") VALUES (?, ?)  [["post_id", 1], ["img_path", "img_path2"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pictures" ("post_id", "img_path") VALUES (?, ?)[0m  [["post_id", 1], ["img_path", "img_path3"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)  [["user_id", 1], ["tag_id", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)[0m  [["user_id", 1], ["tag_id", 2]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)  [["user_id", 1], ["tag_id", 3]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)[0m  [["user_id", 2], ["tag_id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)  [["user_id", 2], ["tag_id", 2]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)[0m  [["user_id", 3], ["tag_id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (9.5ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "tags"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "posts"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "pictures"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "marks"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "likes"[0m
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "replies"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "friends"[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "follows"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("user_name", "password", "salt", "profile_pic_path", "gender", "id_created_time", "nick_name", "place", "last_login_time") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["user_name", "test_user_1"], ["password", "test1"], ["salt", "salt1"], ["profile_pic_path", "path1"], ["gender", "t"], ["id_created_time", "2015-05-04 02:18:31.000000"], ["nick_name", "name1"], ["place", "name1"], ["last_login_time", "2015-05-04 02:18:31.000000"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("user_name", "password", "salt", "profile_pic_path", "gender", "id_created_time", "nick_name", "place", "last_login_time") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "test_user_2"], ["password", "test2"], ["salt", "salt2"], ["profile_pic_path", "path2"], ["gender", "t"], ["id_created_time", "2015-05-04 02:18:31.000000"], ["nick_name", "name2"], ["place", "name2"], ["last_login_time", "2015-05-04 02:18:31.000000"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("user_name", "password", "salt", "profile_pic_path", "gender", "id_created_time", "nick_name", "place", "last_login_time") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["user_name", "test_user_3"], ["password", "test3"], ["salt", "salt3"], ["profile_pic_path", "path3"], ["gender", "t"], ["id_created_time", "2015-05-04 02:18:31.000000"], ["nick_name", "name3"], ["place", "name3"], ["last_login_time", "2015-05-04 02:18:31.000000"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("tag_name") VALUES (?)[0m  [["tag_name", "tag1"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("tag_name") VALUES (?)  [["tag_name", "tag2"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("tag_name") VALUES (?)[0m  [["tag_name", "tag3"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("user_id", "post_time", "post_text", "longitude", "latitude", "restaurant_id", "restaurant_name", "rating") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["user_id", 1], ["post_time", "2015-05-04 02:18:31.000000"], ["post_text", "post_text1"], ["longitude", "login_longitude1"], ["latitude", "login_latitude1"], ["restaurant_id", 1], ["restaurant_name", "restaurant_name1"], ["rating", 1]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("user_id", "post_time", "post_text", "longitude", "latitude", "restaurant_id", "restaurant_name", "rating") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["post_time", "2015-05-04 02:18:31.000000"], ["post_text", "post_text2"], ["longitude", "login_longitude2"], ["latitude", "login_latitude2"], ["restaurant_id", 2], ["restaurant_name", "restaurant_name2"], ["rating", 2]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("user_id", "post_time", "post_text", "longitude", "latitude", "restaurant_id", "restaurant_name", "rating") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["user_id", 2], ["post_time", "2015-05-04 02:18:31.000000"], ["post_text", "post_text3"], ["longitude", "login_longitude3"], ["latitude", "login_latitude3"], ["restaurant_id", 3], ["restaurant_name", "restaurant_name3"], ["rating", 3]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pictures" ("post_id", "img_path") VALUES (?, ?)[0m  [["post_id", 1], ["img_path", "img_path1"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pictures" ("post_id", "img_path") VALUES (?, ?)  [["post_id", 1], ["img_path", "img_path2"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pictures" ("post_id", "img_path") VALUES (?, ?)[0m  [["post_id", 1], ["img_path", "img_path3"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)  [["user_id", 1], ["tag_id", 1]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)[0m  [["user_id", 1], ["tag_id", 2]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)  [["user_id", 1], ["tag_id", 3]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)[0m  [["user_id", 2], ["tag_id", 1]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)  [["user_id", 2], ["tag_id", 2]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)[0m  [["user_id", 3], ["tag_id", 1]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "likes" ("user_id", "post_id") VALUES (?, ?)  [["user_id", 1], ["post_id", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "likes" ("user_id", "post_id") VALUES (?, ?)[0m  [["user_id", 1], ["post_id", 2]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "likes" ("user_id", "post_id") VALUES (?, ?)  [["user_id", 1], ["post_id", 3]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "likes" ("user_id", "post_id") VALUES (?, ?)[0m  [["user_id", 2], ["post_id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "likes" ("user_id", "post_id") VALUES (?, ?)  [["user_id", 2], ["post_id", 2]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "likes" ("user_id", "post_id") VALUES (?, ?)[0m  [["user_id", 3], ["post_id", 1]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "replies" ("user_id", "post_id", "content", "time") VALUES (?, ?, ?, ?)  [["user_id", 1], ["post_id", 1], ["content", "content1"], ["time", "2015-05-04 02:18:31.000000"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "replies" ("user_id", "post_id", "content", "time") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["post_id", 1], ["content", "content2"], ["time", "2015-05-04 02:18:31.000000"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "replies" ("user_id", "post_id", "content", "time") VALUES (?, ?, ?, ?)  [["user_id", 3], ["post_id", 1], ["content", "content3"], ["time", "2015-05-04 02:18:31.000000"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "replies" ("user_id", "post_id", "content", "time") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["post_id", 3], ["content", "content1"], ["time", "2015-05-04 02:18:31.000000"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "friends" ("user_id", "friend_id") VALUES (?, ?)  [["user_id", 1], ["friend_id", 2]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "friends" ("user_id", "friend_id") VALUES (?, ?)[0m  [["user_id", 2], ["friend_id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "friends" ("user_id", "friend_id") VALUES (?, ?)  [["user_id", 1], ["friend_id", 3]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "friends" ("user_id", "friend_id") VALUES (?, ?)[0m  [["user_id", 3], ["friend_id", 1]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "follows" ("user_id", "follower_id") VALUES (?, ?)  [["user_id", 1], ["follower_id", 2]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "follows" ("user_id", "follower_id") VALUES (?, ?)[0m  [["user_id", 1], ["follower_id", 3]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "follows" ("user_id", "follower_id") VALUES (?, ?)  [["user_id", 2], ["follower_id", 3]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[36m (9.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "users"[0m
+SQLite3::SQLException: no such table: users: DELETE FROM "users"
+  [1m[36m (8.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  ALTER TABLE "users" ADD "user_name" varchar
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "users" ADD "password" varchar[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "users" ADD "salt" varchar
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "users" ADD "profile_pic_path" varchar[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "users" ADD "gender" boolean DEFAULT 'f'
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "users" ADD "id_created_time" datetime[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "users" ADD "nick_name" varchar
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "users" ADD "place" varchar[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "users" ADD "last_login_time" datetime
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "tags" ADD "tag_name" varchar
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "posts" ADD "user_id" integer
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  CREATE  INDEX "index_posts_on_user_id" ON "posts" ("user_id")
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "posts" ADD "post_time" datetime[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "posts" ADD "post_text" text
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "posts" ADD "latitude" varchar[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "posts" ADD "longitude" varchar
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "posts" ADD "restaurant_id" integer[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX "index_posts_on_restaurant_id" ON "posts" ("restaurant_id")[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "posts" ADD "restaurant_name" varchar
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "posts" ADD "rating" integer[0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "pictures" ADD "post_id" integer[0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX "index_pictures_on_post_id" ON "pictures" ("post_id")
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "pictures" ADD "img_path" varchar[0m
+  [1m[35m (1.3ms)[0m  CREATE TABLE "marks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mALTER TABLE "marks" ADD "user_id" integer[0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX "index_marks_on_user_id" ON "marks" ("user_id")
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "marks" ADD "tag_id" integer[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_marks_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_marks_on_user_id' AND type='index'
+
+  [1m[36m (0.9ms)[0m  [1mCREATE  INDEX "index_marks_on_tag_id" ON "marks" ("tag_id")[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "likes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "likes" ADD "user_id" integer[0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX "index_likes_on_user_id" ON "likes" ("user_id")
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "likes" ADD "post_id" integer[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+
+  [1m[36m (1.0ms)[0m  [1mCREATE  INDEX "index_likes_on_post_id" ON "likes" ("post_id")[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "replies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "replies" ADD "user_id" integer[0m
+  [1m[35m (1.0ms)[0m  CREATE  INDEX "index_replies_on_user_id" ON "replies" ("user_id")
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "replies" ADD "post_id" integer[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_replies_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_replies_on_user_id' AND type='index'
+
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX "index_replies_on_post_id" ON "replies" ("post_id")[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "replies" ADD "content" text
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "replies" ADD "time" datetime[0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "friends" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "friends" ADD "user_id" integer[0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX "index_friends_on_user_id" ON "friends" ("user_id")
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "friends" ADD "friend_id" integer[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friends_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friends_on_user_id' AND type='index'
+
+  [1m[36m (0.9ms)[0m  [1mCREATE  INDEX "index_friends_on_friend_id" ON "friends" ("friend_id")[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "follows" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "follows" ADD "user_id" integer[0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX "index_follows_on_user_id" ON "follows" ("user_id")
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "follows" ADD "follower_id" integer[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_user_id' AND type='index'
+
+  [1m[36m (0.7ms)[0m  [1mCREATE  INDEX "index_follows_on_follower_id" ON "follows" ("follower_id")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_follower_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_follower_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friends_on_friend_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friends_on_friend_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friends_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friends_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_post_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_marks_on_tag_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_marks_on_tag_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_marks_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_marks_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_post_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_restaurant_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_restaurant_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_replies_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_replies_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_replies_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_replies_on_user_id' AND type='index'
+[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_follower_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_follower_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friends_on_friend_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friends_on_friend_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friends_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friends_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_post_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_marks_on_tag_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_marks_on_tag_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_marks_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_marks_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_post_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_restaurant_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_restaurant_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_replies_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_replies_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_replies_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_replies_on_user_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (9.3ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (1.1ms)[0m  [1mDELETE FROM "tags"[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "posts"
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "pictures"[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "marks"
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "likes"[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "replies"
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "friends"[0m
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "follows"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("user_name", "password", "salt", "profile_pic_path", "gender", "id_created_time", "nick_name", "place", "last_login_time") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["user_name", "test_user_1"], ["password", "test1"], ["salt", "salt1"], ["profile_pic_path", "path1"], ["gender", "t"], ["id_created_time", "2015-05-04 02:18:31.000000"], ["nick_name", "name1"], ["place", "name1"], ["last_login_time", "2015-05-04 02:18:31.000000"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("user_name", "password", "salt", "profile_pic_path", "gender", "id_created_time", "nick_name", "place", "last_login_time") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "test_user_2"], ["password", "test2"], ["salt", "salt2"], ["profile_pic_path", "path2"], ["gender", "t"], ["id_created_time", "2015-05-04 02:18:31.000000"], ["nick_name", "name2"], ["place", "name2"], ["last_login_time", "2015-05-04 02:18:31.000000"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("user_name", "password", "salt", "profile_pic_path", "gender", "id_created_time", "nick_name", "place", "last_login_time") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["user_name", "test_user_3"], ["password", "test3"], ["salt", "salt3"], ["profile_pic_path", "path3"], ["gender", "t"], ["id_created_time", "2015-05-04 02:18:31.000000"], ["nick_name", "name3"], ["place", "name3"], ["last_login_time", "2015-05-04 02:18:31.000000"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("tag_name") VALUES (?)[0m  [["tag_name", "tag1"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tags" ("tag_name") VALUES (?)  [["tag_name", "tag2"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("tag_name") VALUES (?)[0m  [["tag_name", "tag3"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("user_id", "post_time", "post_text", "longitude", "latitude", "restaurant_id", "restaurant_name", "rating") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["user_id", 1], ["post_time", "2015-05-04 02:18:31.000000"], ["post_text", "post_text1"], ["longitude", "login_longitude1"], ["latitude", "login_latitude1"], ["restaurant_id", 1], ["restaurant_name", "restaurant_name1"], ["rating", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("user_id", "post_time", "post_text", "longitude", "latitude", "restaurant_id", "restaurant_name", "rating") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["post_time", "2015-05-04 02:18:31.000000"], ["post_text", "post_text2"], ["longitude", "login_longitude2"], ["latitude", "login_latitude2"], ["restaurant_id", 2], ["restaurant_name", "restaurant_name2"], ["rating", 2]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("user_id", "post_time", "post_text", "longitude", "latitude", "restaurant_id", "restaurant_name", "rating") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["user_id", 2], ["post_time", "2015-05-04 02:18:31.000000"], ["post_text", "post_text3"], ["longitude", "login_longitude3"], ["latitude", "login_latitude3"], ["restaurant_id", 3], ["restaurant_name", "restaurant_name3"], ["rating", 3]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pictures" ("post_id", "img_path") VALUES (?, ?)[0m  [["post_id", 1], ["img_path", "img_path1"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pictures" ("post_id", "img_path") VALUES (?, ?)  [["post_id", 1], ["img_path", "img_path2"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pictures" ("post_id", "img_path") VALUES (?, ?)[0m  [["post_id", 1], ["img_path", "img_path3"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)  [["user_id", 1], ["tag_id", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)[0m  [["user_id", 1], ["tag_id", 2]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)  [["user_id", 1], ["tag_id", 3]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)[0m  [["user_id", 2], ["tag_id", 1]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)  [["user_id", 2], ["tag_id", 2]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)[0m  [["user_id", 3], ["tag_id", 1]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "likes" ("user_id", "post_id") VALUES (?, ?)  [["user_id", 1], ["post_id", 1]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "likes" ("user_id", "post_id") VALUES (?, ?)[0m  [["user_id", 1], ["post_id", 2]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "likes" ("user_id", "post_id") VALUES (?, ?)  [["user_id", 1], ["post_id", 3]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "likes" ("user_id", "post_id") VALUES (?, ?)[0m  [["user_id", 2], ["post_id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "likes" ("user_id", "post_id") VALUES (?, ?)  [["user_id", 2], ["post_id", 2]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "likes" ("user_id", "post_id") VALUES (?, ?)[0m  [["user_id", 3], ["post_id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "replies" ("user_id", "post_id", "content", "time") VALUES (?, ?, ?, ?)  [["user_id", 1], ["post_id", 1], ["content", "content1"], ["time", "2015-05-04 02:18:31.000000"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "replies" ("user_id", "post_id", "content", "time") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["post_id", 1], ["content", "content2"], ["time", "2015-05-04 02:18:31.000000"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "replies" ("user_id", "post_id", "content", "time") VALUES (?, ?, ?, ?)  [["user_id", 3], ["post_id", 1], ["content", "content3"], ["time", "2015-05-04 02:18:31.000000"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "replies" ("user_id", "post_id", "content", "time") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["post_id", 3], ["content", "content1"], ["time", "2015-05-04 02:18:31.000000"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "friends" ("user_id", "friend_id") VALUES (?, ?)  [["user_id", 1], ["friend_id", 2]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "friends" ("user_id", "friend_id") VALUES (?, ?)[0m  [["user_id", 2], ["friend_id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "friends" ("user_id", "friend_id") VALUES (?, ?)  [["user_id", 1], ["friend_id", 3]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "friends" ("user_id", "friend_id") VALUES (?, ?)[0m  [["user_id", 3], ["friend_id", 1]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "follows" ("user_id", "follower_id") VALUES (?, ?)  [["user_id", 1], ["follower_id", 2]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "follows" ("user_id", "follower_id") VALUES (?, ?)[0m  [["user_id", 1], ["follower_id", 3]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "follows" ("user_id", "follower_id") VALUES (?, ?)  [["user_id", 2], ["follower_id", 3]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "marks" ON "tags"."id" = "marks"."tag_id" WHERE "marks"."user_id" = ?[0m  [["user_id", 1]]
