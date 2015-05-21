@@ -8861,3 +8861,758 @@ Started GET "/signup" for ::1 at 2015-05-21 10:02:26 -0500
 Processing by UsersController#new as HTML
   Rendered users/new.html.erb within layouts/application (11.3ms)
 Completed 200 OK in 99ms (Views: 98.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar, "password" varchar, "salt" varchar, "profile_pic_path" varchar, "gender" boolean DEFAULT 'f', "id_created_time" datetime, "nick_name" varchar, "place" varchar, "last_login_time" datetime) 
+  [1m[36m (0.6ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (8, 'test_user_1', 'test1', 'salt1', 'path1', 't', '2015-05-04 02:18:31.000000', 'name1', 'name1', '2015-05-04 02:18:31.000000')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (9, 'test_user_2', 'test2', 'salt2', 'path2', 't', '2015-05-04 02:18:31.000000', 'name2', 'name2', '2015-05-04 02:18:31.000000')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (10, 'test_user_3', 'test3', 'salt3', 'path3', 't', '2015-05-04 02:18:31.000000', 'name3', 'name3', '2015-05-04 02:18:31.000000')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (11, 'dfgdf', '5463e2d844d71989b33ef3eb33ecdc80', '<IrdN]K\BLUmf2', '', 't', '2015-05-21 13:56:20.727479', 'dfggdf', 'dfggdf', '2015-05-21 13:56:20.727685')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (12, 'jgkgkg', 'd849a1f3858992ab1270df1cafb477d3', 'nwF0[>?lz7J3`X', '', 't', '2015-05-21 14:01:41.493325', 'jgjg', 'jgjg', '2015-05-21 14:01:41.493447')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (13, 'hkg', 'ab6bf90ab0d5a9d4bd65c2c7588a3962', 'acX368SIQd^\e<', '', 't', '2015-05-21 14:29:28.175386', 'jjg', 'jjg', '2015-05-21 14:29:28.175719')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (14, 'hkg@jgjjg.com', '0f9c2a2eebe1db261647841ea00862d8', 'AwX=c>TZ3D?GdO', '', 't', '2015-05-21 14:45:51.763050', 'jjg', 'jjg', '2015-05-21 14:45:51.763171')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (15, 'hkg@jgjjg.com', '9805df967712c39a501fc398eb30bb73', 'upLGc@hPC`vNsi', '', 't', '2015-05-21 14:50:15.370137', 'jgj', 'jgj', '2015-05-21 14:50:15.370354')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (16, 'hkg@jgjjg.com', '9b1abfb748ace1453373ef440c408f65', '[yevFiKO^?uDk6', '', 't', '2015-05-21 14:56:47.836187', 'df', 'df', '2015-05-21 14:56:47.836975')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "ausers" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (17, 'sdfsdf@jgjjg.com', 'b44ef773aa3c260b677c52c3fe084382', 'z6FXtTl<=ew[:L', '', 't', '2015-05-21 14:59:21.785502', 'dfdf', 'dfdf', '2015-05-21 14:59:21.785837')[0m
+  [1m[35m (0.5ms)[0m  DROP TABLE "users"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar, "password" varchar, "salt" varchar, "profile_pic_path" varchar, "gender" boolean DEFAULT 'f', "id_created_time" datetime, "nick_name" varchar, "place" varchar, "last_login_time" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "ausers"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (8, 'test_user_1', 'test1', 'salt1', 'path1', 't', '2015-05-04 02:18:31.000000', 'name1', 'name1', '2015-05-04 02:18:31.000000')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (9, 'test_user_2', 'test2', 'salt2', 'path2', 't', '2015-05-04 02:18:31.000000', 'name2', 'name2', '2015-05-04 02:18:31.000000')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "users" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (10, 'test_user_3', 'test3', 'salt3', 'path3', 't', '2015-05-04 02:18:31.000000', 'name3', 'name3', '2015-05-04 02:18:31.000000')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "users" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (11, 'dfgdf', '5463e2d844d71989b33ef3eb33ecdc80', '<IrdN]K\BLUmf2', '', 't', '2015-05-21 13:56:20.727479', 'dfggdf', 'dfggdf', '2015-05-21 13:56:20.727685')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "users" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (12, 'jgkgkg', 'd849a1f3858992ab1270df1cafb477d3', 'nwF0[>?lz7J3`X', '', 't', '2015-05-21 14:01:41.493325', 'jgjg', 'jgjg', '2015-05-21 14:01:41.493447')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "users" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (13, 'hkg', 'ab6bf90ab0d5a9d4bd65c2c7588a3962', 'acX368SIQd^\e<', '', 't', '2015-05-21 14:29:28.175386', 'jjg', 'jjg', '2015-05-21 14:29:28.175719')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (14, 'hkg@jgjjg.com', '0f9c2a2eebe1db261647841ea00862d8', 'AwX=c>TZ3D?GdO', '', 't', '2015-05-21 14:45:51.763050', 'jjg', 'jjg', '2015-05-21 14:45:51.763171')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "users" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (15, 'hkg@jgjjg.com', '9805df967712c39a501fc398eb30bb73', 'upLGc@hPC`vNsi', '', 't', '2015-05-21 14:50:15.370137', 'jgj', 'jgj', '2015-05-21 14:50:15.370354')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "users" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (16, 'hkg@jgjjg.com', '9b1abfb748ace1453373ef440c408f65', '[yevFiKO^?uDk6', '', 't', '2015-05-21 14:56:47.836187', 'df', 'df', '2015-05-21 14:56:47.836975')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "users" ("id","user_name","password","salt","profile_pic_path","gender","id_created_time","nick_name","place","last_login_time") VALUES (17, 'sdfsdf@jgjjg.com', 'b44ef773aa3c260b677c52c3fe084382', 'z6FXtTl<=ew[:L', '', 't', '2015-05-21 14:59:21.785502', 'dfdf', 'dfdf', '2015-05-21 14:59:21.785837')
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_follower_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_follower_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friends_on_friend_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friends_on_friend_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friends_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friends_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_marks_on_tag_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_marks_on_tag_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_marks_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_marks_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_restaurant_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_restaurant_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_replies_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_replies_on_post_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_replies_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_replies_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_follower_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_follower_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friends_on_friend_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friends_on_friend_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friends_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friends_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_marks_on_tag_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_marks_on_tag_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_marks_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_marks_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_restaurant_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_restaurant_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_replies_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_replies_on_post_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_replies_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_replies_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "tags"[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "posts"
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "pictures"[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "marks"
+  [1m[36mSQL (1.3ms)[0m  [1mDELETE FROM "likes"[0m
+  [1m[35mSQL (1.1ms)[0m  DELETE FROM "replies"
+  [1m[36mSQL (1.2ms)[0m  [1mDELETE FROM "friends"[0m
+  [1m[35mSQL (1.2ms)[0m  DELETE FROM "follows"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'test_user_1' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."nick_name" = 'name1' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'test_user_2' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."nick_name" = 'name2' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'test_user_3' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."nick_name" = 'name3' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tags" ("tag_name") VALUES (?)  [["tag_name", "tag1"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("tag_name") VALUES (?)[0m  [["tag_name", "tag2"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("tag_name") VALUES (?)  [["tag_name", "tag3"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("user_id", "post_time", "post_text", "longitude", "latitude", "restaurant_id", "restaurant_name", "rating") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["post_time", "2015-05-04 02:18:31.000000"], ["post_text", "post_text1"], ["longitude", "login_longitude1"], ["latitude", "login_latitude1"], ["restaurant_id", 1], ["restaurant_name", "restaurant_name1"], ["rating", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("user_id", "post_time", "post_text", "longitude", "latitude", "restaurant_id", "restaurant_name", "rating") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["user_id", 1], ["post_time", "2015-05-04 02:18:31.000000"], ["post_text", "post_text2"], ["longitude", "login_longitude2"], ["latitude", "login_latitude2"], ["restaurant_id", 2], ["restaurant_name", "restaurant_name2"], ["rating", 2]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("user_id", "post_time", "post_text", "longitude", "latitude", "restaurant_id", "restaurant_name", "rating") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 2], ["post_time", "2015-05-04 02:18:31.000000"], ["post_text", "post_text3"], ["longitude", "login_longitude3"], ["latitude", "login_latitude3"], ["restaurant_id", 3], ["restaurant_name", "restaurant_name3"], ["rating", 3]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pictures" ("post_id", "img_path") VALUES (?, ?)  [["post_id", 1], ["img_path", "img_path1"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pictures" ("post_id", "img_path") VALUES (?, ?)[0m  [["post_id", 1], ["img_path", "img_path2"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pictures" ("post_id", "img_path") VALUES (?, ?)  [["post_id", 1], ["img_path", "img_path3"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)[0m  [["user_id", 1], ["tag_id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)  [["user_id", 1], ["tag_id", 2]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)[0m  [["user_id", 1], ["tag_id", 3]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)  [["user_id", 2], ["tag_id", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)[0m  [["user_id", 2], ["tag_id", 2]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "marks" ("user_id", "tag_id") VALUES (?, ?)  [["user_id", 3], ["tag_id", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "likes" ("user_id", "post_id") VALUES (?, ?)[0m  [["user_id", 1], ["post_id", 1]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "likes" ("user_id", "post_id") VALUES (?, ?)  [["user_id", 1], ["post_id", 2]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "likes" ("user_id", "post_id") VALUES (?, ?)[0m  [["user_id", 1], ["post_id", 3]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "likes" ("user_id", "post_id") VALUES (?, ?)  [["user_id", 2], ["post_id", 1]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "likes" ("user_id", "post_id") VALUES (?, ?)[0m  [["user_id", 2], ["post_id", 2]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "likes" ("user_id", "post_id") VALUES (?, ?)  [["user_id", 3], ["post_id", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "replies" ("user_id", "post_id", "content", "time") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["post_id", 1], ["content", "content1"], ["time", "2015-05-04 02:18:31.000000"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "replies" ("user_id", "post_id", "content", "time") VALUES (?, ?, ?, ?)  [["user_id", 2], ["post_id", 1], ["content", "content2"], ["time", "2015-05-04 02:18:31.000000"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "replies" ("user_id", "post_id", "content", "time") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["post_id", 1], ["content", "content3"], ["time", "2015-05-04 02:18:31.000000"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "replies" ("user_id", "post_id", "content", "time") VALUES (?, ?, ?, ?)  [["user_id", 2], ["post_id", 3], ["content", "content1"], ["time", "2015-05-04 02:18:31.000000"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "friends" ("user_id", "friend_id") VALUES (?, ?)[0m  [["user_id", 1], ["friend_id", 2]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "friends" ("user_id", "friend_id") VALUES (?, ?)  [["user_id", 2], ["friend_id", 1]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "friends" ("user_id", "friend_id") VALUES (?, ?)[0m  [["user_id", 1], ["friend_id", 3]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "friends" ("user_id", "friend_id") VALUES (?, ?)  [["user_id", 3], ["friend_id", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "follows" ("user_id", "follower_id") VALUES (?, ?)[0m  [["user_id", 1], ["follower_id", 2]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "follows" ("user_id", "follower_id") VALUES (?, ?)  [["user_id", 1], ["follower_id", 3]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "follows" ("user_id", "follower_id") VALUES (?, ?)[0m  [["user_id", 2], ["follower_id", 3]]
+  [1m[35m (0.8ms)[0m  commit transaction
+
+
+Started POST "/users" for ::1 at 2015-05-21 15:31:51 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aR0bXygYiwIYUAZ9ey0iaFSAwV1KJptusUPO40zTi3TxJR0LEGLuHLcYGk5xGDa+/gr3E1mMnzyMg4cIaBbNYQ==", "user_name"=>"sfdsf", "password"=>"[FILTERED]", "repassword"=>"[FILTERED]", "profile_pic_path"=>"", "gender"=>"1", "nick_name"=>"sdf", "commit"=>"Sign Up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'sfdsf' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."nick_name" = 'sdf' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/new.html.erb within layouts/application (200.0ms)
+Completed 200 OK in 472ms (Views: 383.4ms | ActiveRecord: 2.9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/flat-ui/css/fonts/glyphicons-halflings-regular.woff"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/wanluwang/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wanluwang/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wanluwang/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+ActionController::RoutingError (No route matches [GET] "/assets/flat-ui/css/fonts/glyphicons-halflings-regular.ttf"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/wanluwang/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wanluwang/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wanluwang/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/users" for ::1 at 2015-05-21 15:31:55 -0500
+Processing by UsersController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 103ms (Views: 101.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2015-05-21 15:31:59 -0500
+Processing by UsersController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 91ms (Views: 89.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2015-05-21 15:32:00 -0500
+Processing by UsersController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 57ms (Views: 56.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2015-05-21 15:32:02 -0500
+Processing by UsersController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 66ms (Views: 65.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2015-05-21 15:32:03 -0500
+Processing by UsersController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 85ms (Views: 84.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/restaurants" for ::1 at 2015-05-21 15:32:04 -0500
+Processing by RestaurantsController#index as HTML
+  Rendered restaurants/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 911ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 15:32:14 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 65ms (Views: 64.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-21 15:32:18 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 60ms (Views: 59.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-05-21 15:32:50 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kVGP2R4GNplojD+60/ReeAqblP1Uh+7vrZfq6d4bzjsJaYmNJnxTh8fEI4nZwUquoBGis0ct6r2QV6MC+t6ILg==", "user_name"=>"wanluw@gmail.com", "password"=>"[FILTERED]", "repassword"=>"[FILTERED]", "profile_pic_path"=>"", "gender"=>"1", "nick_name"=>"sdfsdf", "commit"=>"Sign Up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'wanluw@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."nick_name" = 'sdfsdf' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("user_name", "salt", "password", "profile_pic_path", "gender", "id_created_time", "nick_name", "place", "last_login_time") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["user_name", "wanluw@gmail.com"], ["salt", "7vJkgM?narjW9R"], ["password", "7dd1edd2a609615f28236e71b9714287"], ["profile_pic_path", ""], ["gender", "t"], ["id_created_time", "2015-05-21 20:32:50.918929"], ["nick_name", "sdfsdf"], ["place", "sdfsdf"], ["last_login_time", "2015-05-21 20:32:50.919136"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 53ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users" for ::1 at 2015-05-21 15:32:50 -0500
+Processing by UsersController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 71ms (Views: 69.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 15:32:57 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 67ms (Views: 66.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-21 15:33:05 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yrw7fP6/xtDpG8DrhIxmmThgho93/GxH3kzwtn7fybr6hD0oxsWjzkZT3NiOuXJPkuqwwWRWaBXjjLldWhqPrw==", "user_name"=>"wanluw@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "wanluw@gmail.com"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 19ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 15:33:05 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 72ms (Views: 71.7ms | ActiveRecord: 0.0ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/flat-ui/css/fonts/glyphicons-halflings-regular.woff"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/wanluwang/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wanluwang/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wanluwang/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+ActionController::RoutingError (No route matches [GET] "/assets/flat-ui/css/fonts/glyphicons-halflings-regular.ttf"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/wanluwang/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wanluwang/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wanluwang/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/users" for ::1 at 2015-05-21 15:33:38 -0500
+Processing by UsersController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 75ms (Views: 74.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/18" for ::1 at 2015-05-21 15:33:40 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 18]]
+  Rendered users/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 54ms (Views: 52.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2015-05-21 15:33:41 -0500
+Processing by UsersController#index as HTML
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 68ms (Views: 66.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 15:33:53 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 72ms (Views: 71.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-21 15:33:58 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RNb41NcPW8VSOk2yUNzxNmQMshDVXwYwPecDodIk2y3c7v6A73U+2/1yUYFa6eXgzoaEXsb1AmIAJ0pK9uGdOA==", "user_name"=>"wanluw@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "wanluw@gmail.com"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 15:33:58 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 71ms (Views: 69.9ms | ActiveRecord: 0.0ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/flat-ui/css/fonts/glyphicons-halflings-regular.woff"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/wanluwang/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wanluwang/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wanluwang/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+ActionController::RoutingError (No route matches [GET] "/assets/flat-ui/css/fonts/glyphicons-halflings-regular.ttf"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/wanluwang/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wanluwang/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wanluwang/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+
+Started GET "/login" for ::1 at 2015-05-21 15:35:17 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 140ms (Views: 122.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users" for ::1 at 2015-05-21 15:35:21 -0500
+Processing by UsersController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 66ms (Views: 64.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 15:35:31 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 61ms (Views: 60.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-21 15:35:37 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JbJlSLzN3WBvGoiNUZ67ZHJRJQA3UyYZXrg5nEbmIze9imMchLe4fsBSlL5bq6+y2NsTTiT5IktjeHB3YiNlIg==", "user_name"=>"wanluw@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "wanluw@gmail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 15:35:37 -0500
+Processing by UsersController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 18]]
+Completed 200 OK in 83ms (Views: 82.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 15:36:05 -0500
+Processing by UsersController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 18]]
+Completed 200 OK in 73ms (Views: 71.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logout" for ::1 at 2015-05-21 15:36:08 -0500
+Processing by SessionsController#delete as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 15:36:08 -0500
+Processing by UsersController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 63ms (Views: 61.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 15:36:17 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 60ms (Views: 59.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-21 15:36:18 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 86ms (Views: 85.3ms | ActiveRecord: 0.0ms)
