@@ -21,22 +21,6 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "follows", ["follower_id"], name: "index_follows_on_follower_id"
   add_index "follows", ["user_id"], name: "index_follows_on_user_id"
 
-  create_table "friends", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "friend_id"
-  end
-
-  add_index "friends", ["friend_id"], name: "index_friends_on_friend_id"
-  add_index "friends", ["user_id"], name: "index_friends_on_user_id"
-
-  create_table "likes", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "post_id"
-  end
-
-  add_index "likes", ["post_id"], name: "index_likes_on_post_id"
-  add_index "likes", ["user_id"], name: "index_likes_on_user_id"
-
   create_table "marks", force: :cascade do |t|
     t.integer "user_id"
     t.integer "tag_id"
@@ -52,18 +36,23 @@ ActiveRecord::Schema.define(version: 0) do
 
   add_index "pictures", ["post_id"], name: "index_pictures_on_post_id"
 
+  create_table "places", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "restaurant_id"
+  end
+
+  add_index "places", ["post_id"], name: "index_places_on_post_id"
+  add_index "places", ["restaurant_id"], name: "index_places_on_restaurant_id"
+
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
     t.datetime "post_time"
     t.text     "post_text"
     t.string   "latitude"
     t.string   "longitude"
-    t.integer  "restaurant_id"
-    t.string   "restaurant_name"
     t.integer  "rating"
   end
 
-  add_index "posts", ["restaurant_id"], name: "index_posts_on_restaurant_id"
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "replies", force: :cascade do |t|
@@ -76,20 +65,33 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "replies", ["post_id"], name: "index_replies_on_post_id"
   add_index "replies", ["user_id"], name: "index_replies_on_user_id"
 
+  create_table "restaurants", force: :cascade do |t|
+    t.string "yelp_id"
+    t.string "name"
+    t.string "image_url"
+    t.string "url"
+    t.string "phone"
+    t.string "rating_img_url"
+    t.string "location_display_address"
+    t.float  "rating"
+    t.string "snippet_text"
+  end
+
+  add_index "restaurants", ["yelp_id"], name: "index_restaurants_on_yelp_id"
+
   create_table "tags", force: :cascade do |t|
     t.string "tag_name"
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "user_name"
-    t.string   "password"
-    t.string   "salt"
     t.string   "profile_pic_path"
-    t.boolean  "gender",           default: false
+    t.integer  "gender"
     t.datetime "id_created_time"
     t.string   "nick_name"
     t.string   "place"
     t.datetime "last_login_time"
+    t.string   "password_digest"
   end
 
 end

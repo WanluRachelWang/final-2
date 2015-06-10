@@ -1,9 +1,8 @@
 User
   user_name: string
-  password: string
-  salt: string
+  password_digest: string
   profile_pic_path: string
-  gender: boolean
+  gender: int
   id_created_time: datetime
   nick_name: string
   place: string
@@ -12,17 +11,28 @@ User
 Tag
   tag_name: string
 
-
-
 Post
   user_id: integer
   post_time: datetime
   post_text: text
   latitude: string
   longitude: string
-  restaurant_id: integer
-  restaurant_name: string
   rating: integer
+
+Restaurant
+  yelp_id: string
+  name: string
+  image_url: string
+  url: string
+  phone: string
+  rating_img_url: string
+  rating: float
+  location_display_address: string
+  snippet_text: string
+
+Place
+  post_id: integer
+  restaurant_id: integer
 
 Picture
   post_id: integer
@@ -32,19 +42,11 @@ Mark
   user_id: integer
   tag_id: integer
 
-Like
-  user_id: integer
-  post_id: integer
-
 Reply
   user_id: integer
   post_id: integer
   content: text
   time: datetime
-
-Friend
-  user_id: integer
-  friend_id: integer
 
 Follow
   user_id: integer

@@ -1,11 +1,9 @@
 class Post < ActiveRecord::Base
 	belongs_to :user
-	has_many :replys
-	has_many :pictures
-	has_many :likes
-	validates_presence_of :user_id
-	validates_presence_of :post_time
-	validates_presence_of :post_text
-	validates_presence_of :restaurant_name
-	validates_presence_of :rating
+	has_many :replies, :dependent => :delete_all
+	has_many :likes, :dependent => :delete_all
+  has_one :place, :dependent => :delete
+  has_one :restaurant, through: :place
+
+	validates :user_id, :post_time, :post_text, :rating, presence: true, allow_nil: false
 end

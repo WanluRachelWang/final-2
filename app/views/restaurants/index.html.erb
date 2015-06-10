@@ -6,98 +6,80 @@
     height: 40em;
   }
 
-  .business{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    border-radius: 5px;
-    height: 155px;
-    border: 1px solid #DDD;
-    margin-bottom: 10px;
-    padding-top: 15px;
-    background-color: #F7F7F7;
-  }
-
-  .business-name{
-    text-align: left;
-    font-weight: bold;
-    text-decoration: none;
-  }
-
-  .business-address{
+  .restaurants-address{
     text-align: left;
     font-size: 12px;
   }
 
-  .business-snippet p{
-    font-size: 12px;
+  .side-map{
+    height: 100%;
+    width: inherit;
+  }
+  
+  .img-thumbnail{
+    height: 100%;
+    width: 100%;
+  }
+
+  .highlight{
+    padding: 4px 10px;
+    margin: 2px 0px;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    border-radius: 4px;
     color: gray;
   }
 
-  .business-state span{
-    padding: 1px 8px;
+  .restaurant-img{
+    border: 4px solid lightgrey;
     border-radius: 4px;
-    color: white;
-    margin: 2px 0px;
   }
 
-  .open{
-    background-color: #1abc9c;
-  }
-
-  .close{
-    background-color: #e74c3c;
-  }
-
-  .business-state {
-    text-align: left;
-  }
-
-  .restaurant-list {
-    margin-top: 10px;
-  }
 </style>
 
 <div class="container">
-  <div class="row map-div">
-    <div id="map_canvas" style="width:100%; height:100%"></div>
-  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <!-- restaurant list-->
+      <div class="row">
 
-  <div class ="row restaurant-list">
-    <% @businesses.each do |business| %>
-      <div class = "col-md-6">
-        <div class = "business">
-          <div class = "col-md-3">
-            <%= image_tag business.image_url, :class => "img-thumbnail" %>
-          </div>
-          <div class = "col-md-9">
+        <%= paginate @restaurants %>
 
-            <div class = "business-name">
-              <%= business.name %>
-              <%= image_tag business.rating_img_url %>
-            </div>
+        <ul class="media-list">
+          <% @restaurants.each do |restaurant| %>
+            <li class="media well">
+              <div class="media-left">
+                <a href="<%= restaurant_url(restaurant.id) %>">
+                  <%= image_tag restaurant.image_url, :class => "media-object restaurant-img" %>
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">
+                  <%= link_to restaurant.name, restaurant_url(restaurant.id) %>
+                </h4>
+                <%= image_tag restaurant.rating_img_url %>
 
-            <div class = "business-state">
-              <% if business.is_closed %>
-                <span class = "close">Close</span>
-              <% else %>
-                <span class = "open">Open</span>
-              <% end %>
-            </div>
+                <% if restaurant.snippet_text.present? %>
+                  <div class="highlight">
+                    <%= restaurant.snippet_text %>
+                  </div>
+                <% end %>
 
-            <div class = "business-snippet">
-              <p class="text-left"><%= business.snippet_text %></p>
-            </div>
-
-            <div class = "business-address">
-              <em><%= "#{business.location.display_address[0]},#{business.location.display_address[1]},#{business.location.display_address[2]}" %></em>
-            </div>
-
-          </div>
-        </div>
+                <div class = "restaurant-address">
+                  <em><%= restaurant.location_display_address %></em>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
       </div>
-    <% end %>
+    </div>
+
+    <div class="col-md-4">
+      <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix side-map">
+        <div id="map_canvas" style="width:100%; height:100%"></div>
+      </nav>
+    </div>
   </div>
 
 </div>
@@ -158,10 +140,10 @@
 
 	      map.setCenter(pos);
 
-        <% @businesses.each do |business| %>
+        <% @restaurants.each do |restaurant| %>
 
           var request = {
-            query: '<%= "#{business.location.display_address[0]} #{business.location.display_address[1]} #{business.location.display_address[2]}" %>'
+            query: '<%= restaurant.location_display_address %>'
           };
 
           service.textSearch(request, textSearchCallBack);

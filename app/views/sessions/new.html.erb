@@ -21,17 +21,6 @@
 </style>
 
 <div class="container">
-
-  <% if notice.present? %>
-    <div class="row">
-      <div class="alert alert-danger" role="alert">
-        <span class="glyphicon glyphicon-exclamation-sign"></span>
-        <span class="sr-only">Error:</span>
-        <%= notice %>
-      </div>
-    </div>
-  <% end %>
-
   <div class="row">
 
     <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 login-form">
@@ -50,7 +39,7 @@
         <div class="form-group">
           <div class="input-group input-group-lg">
             <%= label_tag 'password', "Password", :class => "input-group-addon" %>
-            <%= text_field_tag 'password', nil, :class => "form-control", :type => "password" %>
+            <%= password_field_tag 'password', nil, :class => "form-control"%>
           </div>
         </div>
 
